@@ -1,0 +1,18 @@
+# Here you can define all your data sets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://kedro.readthedocs.io/en/stable/05_data/01_data_catalog.html
+dmf:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/dmf_data.csv
+
+raw_shortage_prediction:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/drug_shortage_prediction.csv
+  load_args:
+    header: 1
+    low_memory: False
+  
+preprocessed_dmf:
+  type: pandas.JSONDataSet
+  filepath: data/02_intermediate/preprocessed_dmf.json
